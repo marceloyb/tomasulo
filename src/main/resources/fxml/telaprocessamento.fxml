@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="497.0" prefWidth="774.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="telas.TelaProcess">
+   <children>
+      <Label layoutX="132.0" layoutY="50.0" text="Ciclo" />
+      <TextField fx:id="tfCiclo" layoutX="177.0" layoutY="45.0" prefHeight="26.0" prefWidth="32.0" />
+      <Button fx:id="btBancoReg" layoutX="58.0" layoutY="281.0" mnemonicParsing="false" onAction="#btBancoRegActionHandler" text="Status Banco Registradores" />
+      <Button fx:id="btMem" layoutX="539.0" layoutY="281.0" mnemonicParsing="false" onAction="#btMemActionHandler" text="Status Memoria" />
+      <Button fx:id="btProcessar" layoutX="151.0" layoutY="87.0" mnemonicParsing="false" onAction="#btProcessarActionHandler" prefHeight="26.0" prefWidth="84.0" text="Processar" />
+      <Button fx:id="btReg" layoutX="310.0" layoutY="281.0" mnemonicParsing="false" onAction="#btRegActionHandler" text="Status Registradores" />
+   </children>
+</AnchorPane>

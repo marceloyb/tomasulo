@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="498.0" prefWidth="606.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="telas.TelaStatusRegistradores">
+   <children>
+      <TableView fx:id="tvReg" prefHeight="430.0" prefWidth="606.0">
+        <columns>
+          <TableColumn fx:id="tcReg" prefWidth="184.0" text="Nome" />
+          <TableColumn fx:id="tcValor" prefWidth="152.0" text="Valor" />
+            <TableColumn fx:id="tcProcessing" prefWidth="141.0" text="Processing" />
+            <TableColumn fx:id="tcBanco" prefWidth="128.0" text="Banco" />
+        </columns>
+      </TableView>
+      <Button fx:id="btVoltar" layoutX="275.0" layoutY="453.0" mnemonicParsing="false" onAction="#btVoltarActionHandler" text="Voltar" />
+   </children>
+</AnchorPane>
