@@ -496,7 +496,7 @@ public class SetEstacao {
         }
     }
 
-    public void sw(Registrador r1, Registrador r2, int imediato){
+    public void sw(Registrador r1,int imediato, Registrador r2){
         for (i = 0; i < listaload.size(); i++) {
             if (listaload.get(i).getBusy().equals("0")) {
                 listaload.get(i).setBusy("1");

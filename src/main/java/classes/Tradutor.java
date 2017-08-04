@@ -64,6 +64,9 @@ public class Tradutor {
             case "r8":
                 retorno = Global.r8;
                 break;
+            case "zero":
+                retorno = Global.zero;
+                break;
             default:
                 Global.intpass = Integer.valueOf(reg);
         }
@@ -242,7 +245,7 @@ public class Tradutor {
                         operando1 = listareg.get(0);
                         operando2 = listareg.get(1);
                         imediato = Global.intpass;
-                        ex.sw(operando1, operando2, imediato);
+                        ex.sw(operando1, imediato,operando2);
                         break;
                     default:
                         break;

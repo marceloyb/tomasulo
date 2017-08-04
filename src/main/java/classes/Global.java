@@ -44,6 +44,7 @@ public class Global {
     public static Registrador r6 = new Registrador();
     public static Registrador r7 = new Registrador();
     public static Registrador r8 = new Registrador();
+    public static Registrador zero = new Registrador();
 
     public static EstacaoReserva bradd1 = new EstacaoReserva();
     public static EstacaoReserva bradd2 = new EstacaoReserva();
