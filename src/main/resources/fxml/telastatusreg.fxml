@@ -12,7 +12,7 @@
           <TableColumn fx:id="tcReg" prefWidth="184.0" text="Nome" />
           <TableColumn fx:id="tcValor" prefWidth="152.0" text="Valor" />
             <TableColumn fx:id="tcProcessing" prefWidth="141.0" text="Processing" />
-            <TableColumn fx:id="tcBanco" prefWidth="128.0" text="Banco" />
+            <TableColumn fx:id="tcEstacao" prefWidth="128.0" text="Estacao" />
         </columns>
       </TableView>
       <Button fx:id="btVoltar" layoutX="275.0" layoutY="453.0" mnemonicParsing="false" onAction="#btVoltarActionHandler" text="Voltar" />

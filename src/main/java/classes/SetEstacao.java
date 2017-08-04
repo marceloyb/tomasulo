@@ -158,18 +158,18 @@ public class SetEstacao {
                     listadd.get(i).setR(r1);
 
                     if (r2.getProcessing().equals("1")) {
-                        listadd.get(i).setQj(r2.getBanco());
+                        listadd.get(i).setQj(r2.getEstacao());
                     } else {
                         listadd.get(i).setVj(r2.getValor());
                     }
                     if (r3.getProcessing().equals("1")) {
-                        listadd.get(i).setQk(r3.getBanco());
+                        listadd.get(i).setQk(r3.getEstacao());
                     } else {
                         listadd.get(i).setVk(r3.getValor());
                     }
                     r1.setProcessing("1");
                     r1.setValor("");
-                    r1.setBanco(listadd.get(i).getNome());
+                    r1.setEstacao(listadd.get(i).getNome());
                     break;
                 }
             }
@@ -191,14 +191,14 @@ public class SetEstacao {
                     listadd.get(i).setOp("ADD");
                     listadd.get(i).setR(r1);
                     if (r2.getProcessing().equals("1")) {
-                        listadd.get(i).setQj(r2.getBanco());
+                        listadd.get(i).setQj(r2.getEstacao());
                     } else {
                         listadd.get(i).setVj(r2.getValor());
                     }
                     listadd.get(i).setVk(String.valueOf(valor));
                     r1.setProcessing("1");
                     r1.setValor("");
-                    r1.setBanco(listadd.get(i).getNome());
+                    r1.setEstacao(listadd.get(i).getNome());
                     break;
                 }
             }
@@ -219,18 +219,18 @@ public class SetEstacao {
                     listadd.get(i).setOp("SUB");
                     listadd.get(i).setR(r1);
                     if (r2.getProcessing().equals("1")) {
-                        listadd.get(i).setQj(r2.getBanco());
+                        listadd.get(i).setQj(r2.getEstacao());
                     } else {
                         listadd.get(i).setVj(r2.getValor());
                     }
                     if (r3.getProcessing().equals("1")) {
-                        listadd.get(i).setQk(r3.getBanco());
+                        listadd.get(i).setQk(r3.getEstacao());
                     } else {
                         listadd.get(i).setVk(r3.getValor());
                     }
                     r1.setProcessing("1");
                     r1.setValor("");
-                    r1.setBanco(listadd.get(i).getNome());
+                    r1.setEstacao(listadd.get(i).getNome());
                     break;
                 }
             }
@@ -251,14 +251,14 @@ public class SetEstacao {
                     listadd.get(i).setOp("SUB");
                     listadd.get(i).setR(r1);
                     if (r2.getProcessing().equals("1")) {
-                        listadd.get(i).setQj(r2.getBanco());
+                        listadd.get(i).setQj(r2.getEstacao());
                     } else {
                         listadd.get(i).setVj(r2.getValor());
                     }
                     listadd.get(i).setVk(String.valueOf(valor));
                     r1.setProcessing("1");
                     r1.setValor("");
-                    r1.setBanco(listadd.get(i).getNome());
+                    r1.setEstacao(listadd.get(i).getNome());
                     break;
                 }
             }
@@ -279,17 +279,17 @@ public class SetEstacao {
                     listamul.get(i).setOp("MUL");
                     listamul.get(i).setR(r1);
                     if (r2.getProcessing().equals("1")) {
-                        listamul.get(i).setQj(r2.getBanco());
+                        listamul.get(i).setQj(r2.getEstacao());
                     } else {
                         listamul.get(i).setVj(r2.getValor());
                     }
                     if (r3.getProcessing().equals("1")) {
-                        listamul.get(i).setQk(r3.getBanco());
+                        listamul.get(i).setQk(r3.getEstacao());
                     } else {
                         listamul.get(i).setVk(r3.getValor());
                     }
                     r1.setProcessing("1");
-                    r1.setBanco(listamul.get(i).getNome());
+                    r1.setEstacao(listamul.get(i).getNome());
                     break;
                 }
             }
@@ -310,17 +310,17 @@ public class SetEstacao {
                     listamul.get(i).setOp("DIV");
                     listamul.get(i).setR(r1);
                     if (r2.getProcessing().equals("1")) {
-                        listamul.get(i).setQj(r2.getBanco());
+                        listamul.get(i).setQj(r2.getEstacao());
                     } else {
                         listamul.get(i).setVj(r2.getValor());
                     }
                     if (r3.getProcessing().equals("1")) {
-                        listamul.get(i).setQk(r3.getBanco());
+                        listamul.get(i).setQk(r3.getEstacao());
                     } else {
                         listamul.get(i).setVk(r3.getValor());
                     }
                     r1.setProcessing("1");
-                    r1.setBanco(listamul.get(i).getNome());
+                    r1.setEstacao(listamul.get(i).getNome());
                     break;
                 }
             }
@@ -339,18 +339,18 @@ public class SetEstacao {
                 listadd.get(i).setR(r1);
                 listadd.get(i).setOp("AND");
                 if (r2.getProcessing().equals("1")) {
-                    listadd.get(i).setQj(r2.getBanco());
+                    listadd.get(i).setQj(r2.getEstacao());
                 } else {
                     listadd.get(i).setVj(r2.getValor());
                 }
                 if (r3.getProcessing().equals("1")) {
-                    listadd.get(i).setQk(r3.getBanco());
+                    listadd.get(i).setQk(r3.getEstacao());
                 } else {
                     listadd.get(i).setVk(r3.getValor());
                 }
                 r1.setProcessing("1");
                 r1.setValor("");
-                r1.setBanco(listadd.get(i).getNome());
+                r1.setEstacao(listadd.get(i).getNome());
                 break;
             }
         }
@@ -363,18 +363,18 @@ public class SetEstacao {
                 listadd.get(i).setOp("OR");
                 listadd.get(i).setR(r1);
                 if (r2.getProcessing().equals("1")) {
-                    listadd.get(i).setQj(r2.getBanco());
+                    listadd.get(i).setQj(r2.getEstacao());
                 } else {
                     listadd.get(i).setVj(r2.getValor());
                 }
                 if (r3.getProcessing().equals("1")) {
-                    listadd.get(i).setQk(r3.getBanco());
+                    listadd.get(i).setQk(r3.getEstacao());
                 } else {
                     listadd.get(i).setVk(r3.getValor());
                 }
                 r1.setProcessing("1");
                 r1.setValor("");
-                r1.setBanco(listadd.get(i).getNome());
+                r1.setEstacao(listadd.get(i).getNome());
                 break;
             }
         }
@@ -387,13 +387,13 @@ public class SetEstacao {
                 listadd.get(i).setOp("NOT");
                 listadd.get(i).setR(r1);
                 if (r2.getProcessing().equals("1")) {
-                    listadd.get(i).setQj(r2.getBanco());
+                    listadd.get(i).setQj(r2.getEstacao());
                 } else {
                     listadd.get(i).setVj(r2.getValor());
                 }
                 r1.setProcessing("1");
                 r1.setValor("");
-                r1.setBanco(listadd.get(i).getNome());
+                r1.setEstacao(listadd.get(i).getNome());
                 break;
             }
         }
@@ -407,12 +407,12 @@ public class SetEstacao {
                 listadd.get(i).setOp("BLT");
                 listadd.get(i).setAddress(String.valueOf(endereco));
                 if (r1.getProcessing().equals("1")) {
-                    listadd.get(i).setQj(r1.getBanco());
+                    listadd.get(i).setQj(r1.getEstacao());
                 } else {
                     listadd.get(i).setVj(r1.getValor());
                 }
                 if (r2.getProcessing().equals("1")) {
-                    listadd.get(i).setQk(r2.getBanco());
+                    listadd.get(i).setQk(r2.getEstacao());
                 } else {
                     listadd.get(i).setVk(r2.getValor());
                 }
@@ -429,12 +429,12 @@ public class SetEstacao {
                 listadd.get(i).setOp("BGT");
                 listadd.get(i).setAddress(String.valueOf(endereco));
                 if (r1.getProcessing().equals("1")) {
-                    listadd.get(i).setQj(r1.getBanco());
+                    listadd.get(i).setQj(r1.getEstacao());
                 } else {
                     listadd.get(i).setVj(r1.getValor());
                 }
                 if (r2.getProcessing().equals("1")) {
-                    listadd.get(i).setQk(r2.getBanco());
+                    listadd.get(i).setQk(r2.getEstacao());
                 } else {
                     listadd.get(i).setVk(r2.getValor());
                 }
@@ -451,12 +451,12 @@ public class SetEstacao {
                 listadd.get(i).setOp("BEQ");
                 listadd.get(i).setAddress(String.valueOf(endereco));
                 if (r1.getProcessing().equals("1")) {
-                    listadd.get(i).setQj(r1.getBanco());
+                    listadd.get(i).setQj(r1.getEstacao());
                 } else {
                     listadd.get(i).setVj(r1.getValor());
                 }
                 if (r2.getProcessing().equals("1")) {
-                    listadd.get(i).setQk(r2.getBanco());
+                    listadd.get(i).setQk(r2.getEstacao());
                 } else {
                     listadd.get(i).setVk(r2.getValor());
                 }
@@ -477,16 +477,17 @@ public class SetEstacao {
         }
     }
 
-    public void lw(Registrador r1, Registrador r2, int imediato){
+    public void lw(Registrador r1, int imediato, Registrador r2){
         for (i = 0; i < listaload.size(); i++) {
             if (listaload.get(i).getBusy().equals("0")) {
+                loadprocessando = true;
                 listaload.get(i).setBusy("1");
                 listaload.get(i).setTempo(5);
                 listaload.get(i).setOp("LOAD");
                 listaload.get(i).setR(r1);
                 listaload.get(i).setAddress(String.valueOf(imediato));
                 if (r2.getProcessing().equals("1")) {
-                    listaload.get(i).setQk(r2.getBanco());
+                    listaload.get(i).setQk(r2.getEstacao());
                 } else {
                     listaload.get(i).setVk(r2.getValor());
                 }
@@ -504,18 +505,15 @@ public class SetEstacao {
                 listaload.get(i).setR(r1);
                 listaload.get(i).setAddress(String.valueOf(imediato));
                 if (r1.getProcessing().equals("1")) {
-                    listaload.get(i).setQj(r1.getBanco());
+                    listaload.get(i).setQj(r1.getEstacao());
                 } else {
                     listaload.get(i).setVj(r1.getValor());
                 }
                 if (r2.getProcessing().equals("1")) {
-                    listaload.get(i).setQk(r2.getBanco());
+                    listaload.get(i).setQk(r2.getEstacao());
                 } else {
                     listaload.get(i).setVk(r2.getValor());
                 }
-                r1.setProcessing("1");
-                r1.setValor("");
-                r1.setBanco(listaload.get(i).getNome());
                 break;
             }
         }

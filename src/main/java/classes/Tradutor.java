@@ -3,10 +3,7 @@ package classes;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.StringTokenizer;
 
 /**
@@ -29,8 +26,9 @@ public class Tradutor {
 
     public BufferedReader AbreArq() {
         FileReader arq = null;
+        File file = new File("instrucoes/instrucoes.txt");
         try {
-            arq = new FileReader("/home/marcelo/Desktop/instrucoes");
+            arq = new FileReader(file);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -232,7 +230,7 @@ public class Tradutor {
                         operando1 = listareg.get(0);
                         operando2 = listareg.get(1);
                         imediato = Global.intpass;
-                        ex.lw(operando1, operando2, imediato);
+                        ex.lw(operando1, imediato, operando2);
 
                         break;
                     case "sw":

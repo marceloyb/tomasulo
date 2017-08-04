@@ -27,7 +27,7 @@ public class TelaProcess implements Initializable{
 
     @FXML
     TextField tfCiclo;
-    SetEstacao setbancotemp = new SetEstacao();
+    SetEstacao setestacaotemp = new SetEstacao();
     Processamento processtemp = new Processamento();
     Tradutor tr = new Tradutor();
     private Boolean clearadd;
@@ -48,17 +48,17 @@ public class TelaProcess implements Initializable{
                 tr.LeToken(instrucao);
                 programcounter++;
             }
-            clearadd = setbancotemp.liberaBancoAdd();
+            clearadd = setestacaotemp.liberaBancoAdd();
             if ((clearadd) && (numeroinstrucoesfilaadd > posicaofilaadd)) {
                 posicaofilaadd++;
                 tr.LeToken(filaadd.get(posicaofilaadd));
             }
-            clearmul = setbancotemp.liberaBancoMul();
+            clearmul = setestacaotemp.liberaBancoMul();
             if ((clearmul) && (numeroinstrucoesfilamul > posicaofilamul)) {
                 posicaofilamul++;
                 tr.LeToken(filamul.get(posicaofilamul));
             }
-            clearload = setbancotemp.liberaBancoLoad();
+            clearload = setestacaotemp.liberaBancoLoad();
             if ((clearload) && (numeroinstrucoesfilaload > posicaofilaload)) {
                 posicaofilaload++;
                 tr.LeToken(filaload.get(posicaofilaload));

@@ -1,8 +1,8 @@
 package classes;
 
-import static classes.Global.branchprocessando;
-import static classes.Global.listaload;
-import static classes.Global.tabelamemoria;
+import javafx.scene.control.Alert;
+
+import static classes.Global.*;
 
 /**
  * Created by marcelo on 25/07/17.
@@ -24,9 +24,11 @@ public class Execucao {
             operando1 = Integer.valueOf(banco.getVj());
             operando2 = Integer.valueOf(banco.getVk());
             operando1 = operando1 + operando2;
-            regtemp.setBanco("");
-            regtemp.setValor(String.valueOf(operando1));
-            regtemp.setProcessing("0");
+            if (regtemp.getEstacao().equals(banco.getNome())) {
+                regtemp.setEstacao("");
+                regtemp.setValor(String.valueOf(operando1));
+                regtemp.setProcessing("0");
+            }
             banco.setResultado(operando1);
             setbancotemp.replace(banco.getNome(), operando1);
         }
@@ -40,7 +42,7 @@ public class Execucao {
             operando1 = Integer.valueOf(banco.getVj());
             operando2 = Integer.valueOf(banco.getVk());
             operando1 = operando1 - operando2;
-            regtemp.setBanco("");
+            regtemp.setEstacao("");
             regtemp.setValor(String.valueOf(operando1));
             regtemp.setProcessing("0");
             banco.setResultado(operando1);
@@ -57,7 +59,7 @@ public class Execucao {
             operando1 = Integer.valueOf(banco.getVj());
             operando2 = Integer.valueOf(banco.getVk());
             operando1 = operando1 * operando2;
-            regtemp.setBanco("");
+            regtemp.setEstacao("");
             regtemp.setValor(String.valueOf(operando1));
             regtemp.setProcessing("0");
             banco.setResultado(operando1);
@@ -73,11 +75,12 @@ public class Execucao {
             operando1 = Integer.valueOf(banco.getVj());
             operando2 = Integer.valueOf(banco.getVk());
             operando1 = operando1 / operando2;
-            regtemp.setBanco("");
+            regtemp.setEstacao("");
             regtemp.setValor(String.valueOf(operando1));
             regtemp.setProcessing("0");
             banco.setResultado(operando1);
             setbancotemp.replace(banco.getNome(), operando1);
+
         }
     }
 
@@ -89,7 +92,7 @@ public class Execucao {
             operando1 = Integer.valueOf(banco.getVj());
             operando2 = Integer.valueOf(banco.getVk());
             operando1 = operando1 & operando2;
-            regtemp.setBanco("");
+            regtemp.setEstacao("");
             regtemp.setValor(String.valueOf(operando1));
             regtemp.setProcessing("0");
             banco.setResultado(operando1);
@@ -106,7 +109,7 @@ public class Execucao {
             operando1 = Integer.valueOf(banco.getVj());
             operando2 = Integer.valueOf(banco.getVk());
             operando1 = operando1 | operando2;
-            regtemp.setBanco("");
+            regtemp.setEstacao("");
             regtemp.setValor(String.valueOf(operando1));
             regtemp.setProcessing("0");
             banco.setResultado(operando1);
@@ -122,19 +125,11 @@ public class Execucao {
             regtemp = banco.getR();
             operando1 = Integer.valueOf(banco.getVj());
             operando1 = ~operando1;
-            regtemp.setBanco("");
+            regtemp.setEstacao("");
             regtemp.setValor(String.valueOf(operando1));
             regtemp.setProcessing("0");
             banco.setResultado(operando1);
             setbancotemp.replace(banco.getNome(), operando1);
-        }
-    }
-
-    public void load() {
-        for (i = 0; i < listaload.size(); i++) {
-            if (listaload.get(i).getBusy().equals("1")) {
-                tempo = listaload.get(i).getTempo();
-            }
         }
     }
 
@@ -194,11 +189,12 @@ public class Execucao {
             operando1 = Integer.valueOf(banco.getAddress());
             operando2 = Integer.valueOf(banco.getVk());
             operando1 = operando1 + operando2;
-            regtemp.setBanco("");
+            regtemp.setEstacao("");
             regtemp.setValor(tabelamemoria.get(operando1).getValor());
             regtemp.setProcessing("0");
             banco.setResultado(Integer.valueOf(tabelamemoria.get(operando1).getValor()));
             setbancotemp.replace(banco.getNome(), Integer.valueOf(tabelamemoria.get(operando1).getValor()));
+            loadprocessando = false;
         }
     }
 
@@ -210,12 +206,11 @@ public class Execucao {
             operando1 = Integer.valueOf(banco.getAddress());
             operando2 = Integer.valueOf(banco.getVk());
             operando1 = operando1 + operando2;
-            regtemp.setBanco("");
+            regtemp.setEstacao("");
             regtemp.getValor();
             regtemp.setProcessing("0");
             tabelamemoria.get(operando1).setValor(regtemp.getValor());
             setbancotemp.replace(banco.getNome(), Integer.valueOf(regtemp.getValor()));
-
         }
     }
 }

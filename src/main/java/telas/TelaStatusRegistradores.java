@@ -32,7 +32,7 @@ public class TelaStatusRegistradores implements Initializable{
     @FXML
     TableColumn <Registrador, String> tcProcessing;
     @FXML
-    TableColumn <Registrador, String> tcBanco;
+    TableColumn <Registrador, String> tcEstacao;
     @FXML
     TableView<Registrador> tvReg;
 
@@ -57,7 +57,7 @@ public class TelaStatusRegistradores implements Initializable{
         tcReg.setCellValueFactory(new PropertyValueFactory<>("Nome"));
         tcValor.setCellValueFactory(new PropertyValueFactory<>("Valor"));
         tcProcessing.setCellValueFactory(new PropertyValueFactory<>("Processing"));
-        tcBanco.setCellValueFactory(new PropertyValueFactory<>("Banco"));
+        tcEstacao.setCellValueFactory(new PropertyValueFactory<>("Estacao"));
         tvReg.setItems(FXCollections.observableList(listareg));
     }
 }

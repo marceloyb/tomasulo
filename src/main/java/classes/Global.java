@@ -34,6 +34,7 @@ public class Global {
     public static int numeroinstrucoesfilaload = -1;
 
     public static Boolean branchprocessando = false;
+    public static Boolean loadprocessando = false;
 
     public static Registrador r1 = new Registrador();
     public static Registrador r2 = new Registrador();
@@ -84,7 +85,9 @@ public class Global {
             Memoria tempmem = new Memoria();
             tabelamemoria.add(tempmem);
             tabelamemoria.get(i).setPosicao(String.valueOf(i));
-            tabelamemoria.get(i).setValor(memoria[i]);
+            tabelamemoria.get(i).setValor("0");
         }
+        tabelamemoria.get(32).setValor("10");
+        tabelamemoria.get(10).setValor("3");
     }
 }

@@ -1,5 +1,7 @@
 package classes;
 
+import javafx.scene.control.Alert;
+
 import static classes.Global.*;
 
 /**
@@ -8,17 +10,18 @@ import static classes.Global.*;
 public class Processamento {
     private int i;
     private int tempo;
-    EstacaoReserva bancotemporario = new EstacaoReserva();
+    EstacaoReserva estacaotemporaria = new EstacaoReserva();
     Execucao executa = new Execucao();
+    SetEstacao settemporario = new SetEstacao();
 
 
     public void add() {
         for (i = 0; i < listadd.size(); i++) {
-            bancotemporario = listadd.get(i);
-            if ((bancotemporario.getQj().equals("")) && (bancotemporario.getQk().equals(""))) {
-                if (bancotemporario.getBusy().equals("1") && (bancotemporario.getOp().equals("ADD"))) {
-                    bancotemporario = listadd.get(i);
-                    executa.add(bancotemporario);
+            estacaotemporaria = listadd.get(i);
+            if ((estacaotemporaria.getQj().equals("")) && (estacaotemporaria.getQk().equals(""))) {
+                if (estacaotemporaria.getBusy().equals("1") && (estacaotemporaria.getOp().equals("ADD"))) {
+                    estacaotemporaria = listadd.get(i);
+                    executa.add(estacaotemporaria);
                 }
             }
         }
@@ -26,11 +29,11 @@ public class Processamento {
 
     public void sub(){
         for (i = 0; i < listadd.size(); i++) {
-            bancotemporario = listadd.get(i);
-            if ((bancotemporario.getQj().equals("")) && (bancotemporario.getQk().equals(""))) {
-                if ((bancotemporario.getBusy().equals("1")) && (bancotemporario.getOp().equals("SUB"))) {
-                    bancotemporario = listadd.get(i);
-                    executa.sub(bancotemporario);
+            estacaotemporaria = listadd.get(i);
+            if ((estacaotemporaria.getQj().equals("")) && (estacaotemporaria.getQk().equals(""))) {
+                if ((estacaotemporaria.getBusy().equals("1")) && (estacaotemporaria.getOp().equals("SUB"))) {
+                    estacaotemporaria = listadd.get(i);
+                    executa.sub(estacaotemporaria);
                 }
             }
         }
@@ -39,11 +42,11 @@ public class Processamento {
 
     public void mul(){
         for (i = 0; i < listamul.size(); i++) {
-            bancotemporario = listamul.get(i);
-            if ((bancotemporario.getQj().equals("")) && (bancotemporario.getQk().equals(""))) {
-                if ((bancotemporario.getBusy().equals("1")) && (bancotemporario.getOp().equals("MUL"))){
-                    bancotemporario = listamul.get(i);
-                    executa.mul(bancotemporario);
+            estacaotemporaria = listamul.get(i);
+            if ((estacaotemporaria.getQj().equals("")) && (estacaotemporaria.getQk().equals(""))) {
+                if ((estacaotemporaria.getBusy().equals("1")) && (estacaotemporaria.getOp().equals("MUL"))){
+                    estacaotemporaria = listamul.get(i);
+                    executa.mul(estacaotemporaria);
                 }
             }
         }
@@ -51,11 +54,21 @@ public class Processamento {
 
     public void div(){
         for (i = 0; i < listamul.size(); i++) {
-            bancotemporario = listamul.get(i);
-            if ((bancotemporario.getQj().equals("")) && (bancotemporario.getQk().equals(""))) {
-                if ((bancotemporario.getBusy().equals("1")) && (bancotemporario.getOp().equals("DIV"))){
-                    bancotemporario = listamul.get(i);
-                    executa.div(bancotemporario);
+            estacaotemporaria = listamul.get(i);
+            if ((estacaotemporaria.getQj().equals("")) && (estacaotemporaria.getQk().equals(""))) {
+                if ((estacaotemporaria.getBusy().equals("1")) && (estacaotemporaria.getOp().equals("DIV"))){
+                    if (estacaotemporaria.getVk().equals("0")) {
+                        Alert alert = new Alert(Alert.AlertType.WARNING);
+                        alert.setTitle("Erro");
+                        alert.setHeaderText("Uma divisão por 0 foi detectada");
+                        alert.setContentText("Estacao de reserva pertinente foi limpa");
+                        alert.showAndWait();
+                        settemporario.clearEstacao(estacaotemporaria.getNome());
+                    }
+                    else{
+                        estacaotemporaria = listamul.get(i);
+                        executa.div(estacaotemporaria);
+                    }
                 }
             }
         }
@@ -63,11 +76,11 @@ public class Processamento {
 
     public void and() {
         for (i = 0; i < listadd.size(); i++) {
-            bancotemporario = listadd.get(i);
-            if ((bancotemporario.getQj().equals("")) && (bancotemporario.getQk().equals(""))) {
-                if (bancotemporario.getBusy().equals("1") && (bancotemporario.getOp().equals("AND"))) {
-                    bancotemporario = listadd.get(i);
-                    executa.and(bancotemporario);
+            estacaotemporaria = listadd.get(i);
+            if ((estacaotemporaria.getQj().equals("")) && (estacaotemporaria.getQk().equals(""))) {
+                if (estacaotemporaria.getBusy().equals("1") && (estacaotemporaria.getOp().equals("AND"))) {
+                    estacaotemporaria = listadd.get(i);
+                    executa.and(estacaotemporaria);
                 }
             }
         }
@@ -75,11 +88,11 @@ public class Processamento {
 
     public void or() {
         for (i = 0; i < listadd.size(); i++) {
-            bancotemporario = listadd.get(i);
-            if ((bancotemporario.getQj().equals("")) && (bancotemporario.getQk().equals(""))) {
-                if (bancotemporario.getBusy().equals("1") && (bancotemporario.getOp().equals("OR"))) {
-                    bancotemporario = listadd.get(i);
-                    executa.or(bancotemporario);
+            estacaotemporaria = listadd.get(i);
+            if ((estacaotemporaria.getQj().equals("")) && (estacaotemporaria.getQk().equals(""))) {
+                if (estacaotemporaria.getBusy().equals("1") && (estacaotemporaria.getOp().equals("OR"))) {
+                    estacaotemporaria = listadd.get(i);
+                    executa.or(estacaotemporaria);
                 }
             }
         }
@@ -87,11 +100,11 @@ public class Processamento {
 
     public void not() {
         for (i = 0; i < listadd.size(); i++) {
-            bancotemporario = listadd.get(i);
-            if ((bancotemporario.getQj().equals("")) && (bancotemporario.getQk().equals(""))) {
-                if (bancotemporario.getBusy().equals("1") && (bancotemporario.getOp().equals("NOT"))) {
-                    bancotemporario = listadd.get(i);
-                    executa.not(bancotemporario);
+            estacaotemporaria = listadd.get(i);
+            if ((estacaotemporaria.getQj().equals("")) && (estacaotemporaria.getQk().equals(""))) {
+                if (estacaotemporaria.getBusy().equals("1") && (estacaotemporaria.getOp().equals("NOT"))) {
+                    estacaotemporaria = listadd.get(i);
+                    executa.not(estacaotemporaria);
                 }
             }
         }
@@ -99,11 +112,11 @@ public class Processamento {
 
     public void blt(){
         for (i = 0; i < listadd.size(); i++) {
-            bancotemporario = listadd.get(i);
-            if ((bancotemporario.getQj().equals("")) && (bancotemporario.getQk().equals(""))) {
-                if ((bancotemporario.getBusy().equals("1")) && (bancotemporario.getOp().equals("BLT"))) {
-                    bancotemporario = listadd.get(i);
-                    executa.blt(bancotemporario);
+            estacaotemporaria = listadd.get(i);
+            if ((estacaotemporaria.getQj().equals("")) && (estacaotemporaria.getQk().equals(""))) {
+                if ((estacaotemporaria.getBusy().equals("1")) && (estacaotemporaria.getOp().equals("BLT"))) {
+                    estacaotemporaria = listadd.get(i);
+                    executa.blt(estacaotemporaria);
                 }
             }
         }
@@ -111,11 +124,11 @@ public class Processamento {
 
     public void bgt(){
         for (i = 0; i < listadd.size(); i++) {
-            bancotemporario = listadd.get(i);
-            if ((bancotemporario.getQj().equals("")) && (bancotemporario.getQk().equals(""))) {
-                if ((bancotemporario.getBusy().equals("1")) && (bancotemporario.getOp().equals("BGT"))) {
-                    bancotemporario = listadd.get(i);
-                    executa.bgt(bancotemporario);
+            estacaotemporaria = listadd.get(i);
+            if ((estacaotemporaria.getQj().equals("")) && (estacaotemporaria.getQk().equals(""))) {
+                if ((estacaotemporaria.getBusy().equals("1")) && (estacaotemporaria.getOp().equals("BGT"))) {
+                    estacaotemporaria = listadd.get(i);
+                    executa.bgt(estacaotemporaria);
                 }
             }
         }
@@ -123,11 +136,11 @@ public class Processamento {
 
     public void beq(){
         for (i = 0; i < listadd.size(); i++) {
-            bancotemporario = listadd.get(i);
-            if ((bancotemporario.getQj().equals("")) && (bancotemporario.getQk().equals(""))) {
-                if ((bancotemporario.getBusy().equals("1")) && (bancotemporario.getOp().equals("BEQ"))) {
-                    bancotemporario = listadd.get(i);
-                    executa.beq(bancotemporario);
+            estacaotemporaria = listadd.get(i);
+            if ((estacaotemporaria.getQj().equals("")) && (estacaotemporaria.getQk().equals(""))) {
+                if ((estacaotemporaria.getBusy().equals("1")) && (estacaotemporaria.getOp().equals("BEQ"))) {
+                    estacaotemporaria = listadd.get(i);
+                    executa.beq(estacaotemporaria);
                 }
             }
         }
@@ -135,11 +148,11 @@ public class Processamento {
 
     public void jump(){
         for (i = 0; i < listadd.size(); i++) {
-            bancotemporario = listadd.get(i);
-            if ((bancotemporario.getQj().equals("")) && (bancotemporario.getQk().equals(""))) {
-                if ((bancotemporario.getBusy().equals("1")) && (bancotemporario.getOp().equals("JUMP"))) {
-                    bancotemporario = listadd.get(i);
-                    executa.jump(bancotemporario);
+            estacaotemporaria = listadd.get(i);
+            if ((estacaotemporaria.getQj().equals("")) && (estacaotemporaria.getQk().equals(""))) {
+                if ((estacaotemporaria.getBusy().equals("1")) && (estacaotemporaria.getOp().equals("JUMP"))) {
+                    estacaotemporaria = listadd.get(i);
+                    executa.jump(estacaotemporaria);
                 }
             }
         }
@@ -147,10 +160,10 @@ public class Processamento {
 
     public void lw() {
         for (i = 0; i < listaload.size(); i++) {
-            bancotemporario = listaload.get(i);
-            if ((bancotemporario.getQj().equals("")) && (bancotemporario.getQk().equals(""))) {
-                if ((bancotemporario.getBusy().equals("1")) && (bancotemporario.getOp().equals("LOAD"))) {
-                    executa.lw(bancotemporario);
+            estacaotemporaria = listaload.get(i);
+            if ((estacaotemporaria.getQj().equals("")) && (estacaotemporaria.getQk().equals(""))) {
+                if ((estacaotemporaria.getBusy().equals("1")) && (estacaotemporaria.getOp().equals("LOAD"))) {
+                    executa.lw(estacaotemporaria);
                 }
             }
         }
@@ -158,14 +171,23 @@ public class Processamento {
 
     public void sw(){
         for (i = 0; i < listaload.size(); i++) {
-            bancotemporario = listaload.get(i);
-            if ((bancotemporario.getQj().equals(""))) {
-                if ((bancotemporario.getBusy().equals("1")) && (bancotemporario.getOp().equals("STORE"))) {
-                    executa.sw(bancotemporario);
+            estacaotemporaria = listaload.get(i);
+            if ((estacaotemporaria.getTempo() >= 0) &&(estacaotemporaria.getOp() == "LOAD")) {
+                loadprocessando = true;
+            }
+        }
+        for (i = 0; i <listaload.size(); i++) {
+            estacaotemporaria = listaload.get(i);
+            if (loadprocessando == false) {
+                if ((estacaotemporaria.getQj().equals(""))) {
+                    if ((estacaotemporaria.getBusy().equals("1")) && (estacaotemporaria.getOp() == "STORE")) {
+                        executa.sw(estacaotemporaria);
+                    }
                 }
             }
         }
     }
+
     public void processa(){
         add();
         sub();

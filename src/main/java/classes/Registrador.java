@@ -11,7 +11,7 @@ public class Registrador {
 
     private String processing;
 
-    private String banco;
+    private String estacao;
 
     public String getNome() {
         return nome;
@@ -37,17 +37,17 @@ public class Registrador {
         this.processing = processing;
     }
 
-    public String getBanco() {
-        return banco;
+    public String getEstacao() {
+        return estacao;
     }
 
-    public void setBanco(String banco) {
-        this.banco = banco;
+    public void setEstacao(String estacao) {
+        this.estacao = estacao;
     }
 
     public Registrador() {
         this.processing = "0";
         this.valor = "0";
-        this.banco = "";
+        this.estacao = "";
     }
 }
